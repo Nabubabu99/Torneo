@@ -12,7 +12,6 @@ namespace Torneo
         private int golesEquipoLocal;
         private int golesEquipoVisitante;
         public List<Partido> partidosCreados;
-        //private Torneo torneo = new Torneo();
 
         public Partido()
         {
