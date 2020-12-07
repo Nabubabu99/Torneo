@@ -14,7 +14,7 @@ namespace Torneo
 
             //Console.WriteLine("¿Quieres usar los equipos que están guardados? Si/No");
             //string respuesta = Console.ReadLine();
-            //if(respuesta == "No")
+            //if (respuesta == "No")
             //{
                 int resultado;
                 string equiposNumero;
@@ -40,23 +40,19 @@ namespace Torneo
                 torneo.CrearFecha();
                 torneo.AgregarResultados();
                 torneo.MostrarTablaPosiciones();
+                //torneo.GuardarPartidos();
 
             //}
             //else
             //{
-            //    torneoGuardado.InscribirEquiposListados();
             //    Console.WriteLine($"\nTotal de equipos: {torneoGuardado.listaEquipos.Count}");
             //    foreach (var equipo in torneoGuardado.listaEquipos)
             //    {
             //        Console.WriteLine(equipo.Nombre());
             //    }
-
-            //    torneoGuardado.AgregarPartidosGuardados();
             //    torneoGuardado.CrearFecha();
             //    torneoGuardado.AgregarResultados();
             //    torneoGuardado.MostrarTablaPosiciones();
-            //    var partidos = torneoGuardado.GetPartido();
-            //    torneoGuardado.SerializeJsonFile(partidos);
             //}
         }
     }

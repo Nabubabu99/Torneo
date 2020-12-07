@@ -6,12 +6,16 @@ namespace Torneo
 {
     class Equipo
     {
-        private string nombreEquipo;
-        private int numeroEquipo;
+        public string nombreEquipo { get; set; }
+        public int numeroEquipo;
         private int puntaje;
         private int golesFavor;
         private int golesContra;
 
+        public Equipo()
+        {
+
+        }
         public Equipo(string nombreEquipo, int numeroEquipo)
         {
             this.nombreEquipo = nombreEquipo;

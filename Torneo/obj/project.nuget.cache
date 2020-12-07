@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "bjNJmWUJ6GliO52fDl7O11CU3BHgGaW6SdjZ3WGBI2XCsK+tUj6bFowK0hefVQCTC1faeMEPbpv8F+1x06y4HA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Claudia\\source\\repos\\Torneo\\Torneo\\Torneo.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Claudia\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
