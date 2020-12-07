@@ -6,7 +6,7 @@ namespace Torneo
 {
     class Equipo
     {
-        public string nombreEquipo { get; set; }
+        public string nombreEquipo;
         public int numeroEquipo;
         private int puntaje;
         private int golesFavor;
