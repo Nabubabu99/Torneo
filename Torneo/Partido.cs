@@ -76,20 +76,20 @@ namespace Torneo
         {
             return $"{equipoLocal.Nombre()} vs {equipoVisitante.Nombre()}";
         }
-        public void GuardarPartido()
-        {
-            //TextWriter archivoPartidos = File.AppendText("partidos.txt");
-            //    TextWriter archivoEquipoVisitante = File.AppendText("equipoVisitante.txt");
-            //    TextWriter archivoGoles = File.AppendText("goles.txt");
+        //public void GuardarPartido()
+        //{
+        //    TextWriter archivoPartidos = File.AppendText("partidos.txt");
+        //    TextWriter archivoEquipoVisitante = File.AppendText("equipoVisitante.txt");
+        //    TextWriter archivoGoles = File.AppendText("goles.txt");
 
-            //    archivoPartidos.WriteLine($"{equipoLocal.Nombre()}");
-            //    archivoPartidos.WriteLine($"{equipoVisitante.Nombre()}");
-            //    archivoGoles.WriteLine($"{golesEquipoLocal}");
-            //    archivoGoles.WriteLine($"{golesEquipoVisitante}");
+        //    archivoPartidos.WriteLine($"{equipoLocal.Nombre()}");
+        //    archivoPartidos.WriteLine($"{equipoVisitante.Nombre()}");
+        //    archivoGoles.WriteLine($"{golesEquipoLocal}");
+        //    archivoGoles.WriteLine($"{golesEquipoVisitante}");
 
-            //    archivoPartidos.Close();
-            //    archivoEquipoVisitante.Close();
-            //    archivoGoles.Close();
-        }
+        //    archivoPartidos.Close();
+        //    archivoEquipoVisitante.Close();
+        //    archivoGoles.Close();
+        //}
     }
 }
