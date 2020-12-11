@@ -1,0 +1,15 @@
+C:\Users\Claudia\source\repos\Torneo\Torneo\bin\Debug\netcoreapp3.1\Torneo.exe
+C:\Users\Claudia\source\repos\Torneo\Torneo\bin\Debug\netcoreapp3.1\Torneo.deps.json
+C:\Users\Claudia\source\repos\Torneo\Torneo\bin\Debug\netcoreapp3.1\Torneo.runtimeconfig.json
+C:\Users\Claudia\source\repos\Torneo\Torneo\bin\Debug\netcoreapp3.1\Torneo.runtimeconfig.dev.json
+C:\Users\Claudia\source\repos\Torneo\Torneo\bin\Debug\netcoreapp3.1\Torneo.dll
+C:\Users\Claudia\source\repos\Torneo\Torneo\bin\Debug\netcoreapp3.1\Torneo.pdb
+C:\Users\Claudia\source\repos\Torneo\Torneo\obj\Debug\netcoreapp3.1\Torneo.csprojAssemblyReference.cache
+C:\Users\Claudia\source\repos\Torneo\Torneo\obj\Debug\netcoreapp3.1\Torneo.AssemblyInfoInputs.cache
+C:\Users\Claudia\source\repos\Torneo\Torneo\obj\Debug\netcoreapp3.1\Torneo.AssemblyInfo.cs
+C:\Users\Claudia\source\repos\Torneo\Torneo\obj\Debug\netcoreapp3.1\Torneo.dll
+C:\Users\Claudia\source\repos\Torneo\Torneo\obj\Debug\netcoreapp3.1\Torneo.pdb
+C:\Users\Claudia\source\repos\Torneo\Torneo\obj\Debug\netcoreapp3.1\Torneo.genruntimeconfig.cache
+C:\Users\Claudia\source\repos\Torneo\Torneo\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Claudia\source\repos\Torneo\Torneo\obj\Debug\netcoreapp3.1\Torneo.csproj.CoreCompileInputs.cache
+C:\Users\Claudia\source\repos\Torneo\Torneo\obj\Debug\netcoreapp3.1\Torneo.csproj.CopyComplete

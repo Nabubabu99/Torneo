@@ -14,8 +14,8 @@ namespace Torneo
         public List<string> equiposSeleccionados;
         string[] equiposListados;
         int numeroDelEquipo;
-        public Partido partidos = new Partido();
         public List<Equipo> partidoUltimo;
+        public List<Partido> partidosCreados;
 
         //public Posiciones posiciones;
         //public List<string> resultadosPartidos;
@@ -40,7 +40,7 @@ namespace Torneo
                 Console.WriteLine($"\nIngrese el nombre del equipo número {listaEquipos.Count + 1}");
                 string equipoNombre = Console.ReadLine();
                 numeroDelEquipo = listaEquipos.Count + 1;
-                Equipo equipo = new Equipo(equipoNombre, numeroDelEquipo);
+                Equipo equipo = new Equipo() {nombreEquipo = equipoNombre, numeroEquipo = numeroDelEquipo};
                 if (ComprobarEquipo(equipo) == true)
                 {
                     listaEquipos.Add(equipo);
@@ -98,6 +98,8 @@ namespace Torneo
             equiposListados = new string[equiposNumero];
             equiposSeleccionados = new List<string>();
             partidoUltimo = new List<Equipo>();
+            partidosCreados = new List<Partido>();
+            BaseDeDatos bd = new BaseDeDatos("partidos.json");
 
             for (var i = 0; i < listaEquipos.Count; i++)
             {
@@ -142,8 +144,9 @@ namespace Torneo
                                     equiposSeleccionados.Add(listaEquipos[resPrimerEquipo - 1].Nombre());
                                     equiposSeleccionados.Add(listaEquipos[resSegundoEquipo - 1].Nombre());
                                     Console.WriteLine($"\n{equiposListados[resPrimerEquipo - 1]} vs {equiposListados[resSegundoEquipo - 1]}");
-                                    Partido partido = new Partido(listaEquipos[resPrimerEquipo - 1], listaEquipos[resSegundoEquipo - 1]);
-                                    
+                                    Partido partido = new Partido() { equipoLocal = listaEquipos[resPrimerEquipo - 1], equipoVisitante = listaEquipos[resSegundoEquipo - 1] };
+                                    partidosCreados.Add(partido);
+                                    bd.CargarPartidos(partido);
                                 }
                             }
                         }
@@ -159,7 +162,9 @@ namespace Torneo
                                     equiposSeleccionados.Add(equipo.Nombre());
                                     partidoUltimo.Add(equipo);
                                 }
-                                Partido partido = new Partido(partidoUltimo[0], partidoUltimo[1]);
+                                Partido partido = new Partido() { equipoLocal = partidoUltimo[0], equipoVisitante = partidoUltimo[1] };
+                                partidosCreados.Add(partido);
+                                bd.CargarPartidos(partido);
                                 Console.WriteLine($"{partidoUltimo[0].Nombre()} vs {partidoUltimo[1].Nombre()}");
                                 foreach(var equipoEnLista in equiposListados)
                                 {
@@ -178,7 +183,7 @@ namespace Torneo
 
             Console.WriteLine("\nPartidos creados:");
 
-            foreach (var partido in partidos.partidosCreados)
+            foreach (var partido in partidosCreados)
             {
                 Console.WriteLine(partido.partidoCreado());
             }
@@ -218,9 +223,9 @@ namespace Torneo
         public bool CompararPartidos(string partido)
         {
             var retornar = true;
-            if(partidos.partidosCreados.Count > 0)
+              if(partidosCreados.Count > 0)
             {
-                foreach (var partidoCreado in partidos.partidosCreados)
+                foreach (var partidoCreado in partidosCreados)
                 {
                     if(partidoCreado.partidoCreado() == partido)
                     {
@@ -264,7 +269,7 @@ namespace Torneo
         }
         public void AgregarResultados()
         {
-            foreach (var partido in partidos.partidosCreados)
+            foreach (var partido in partidosCreados)
             {
                 Console.WriteLine($"\nColoque el resultado del {partido.partidoCreado()}");
                 Console.WriteLine($"\nGoles de {partido.getNombrEquipoLocal()}");
@@ -275,36 +280,27 @@ namespace Torneo
                 partido.getGanador();
             }
         }
-        public void AgregarPartidosGuardados()
-        {
-            //partidos.partidosCreados = new List<Partido>();
-            //string[] equipoGuardado = File.ReadAllLines("partidos.txt");
-
-            //for (var i = 0; i < equipoGuardado.Length; i++)
-            //{
-            //    Partido partido = new Partido(equipoGuardado[i], equipoGuardado[i + 1]);
-            //    partidos.partidosCreados.Add(partido);
-            //    i++;
-            //}
-        }
+        //public void GuardarPartidos()
+        //{
+        //    BaseDeDatos bd = new BaseDeDatos("partidos.json");
+        //    foreach(var partido in partidosCreados)
+        //    {
+        //        bd.CargarPartidos(new Partido(partido.equipoLocal, partido.equipoVisitante));
+        //        Console.WriteLine(partido.partidoCreado());
+        //    }
+        //    bd.Guardar();
+        //    bd.Cargar();
+        //}
         public void MostrarTablaPosiciones()
         {
+            BaseDeDatos bd = new BaseDeDatos("partidos.json");
             var ordenarPuntos = listaEquipos.OrderByDescending(puntosEquipo => puntosEquipo.getPuntaje());
             var ordenarGoles = ordenarPuntos.OrderByDescending(golesEquipo => golesEquipo.getDiferenciaGoles());
             foreach (var equipo in ordenarGoles)
             {
                 Console.WriteLine($"{equipo.Nombre()} puntos: {equipo.getPuntaje()} | GF: {equipo.getGolesFavor()} | GC: {equipo.getGolesContra()} | DF: {equipo.getDiferenciaGoles()}");
             }
+            bd.Cargar();
         }
-        public List<Partido> GetPartido()
-        {
-            return partidos.partidosCreados;
-        }
-        //public void SerializeJsonFile(List<Partido> partidos)
-        //{
-        //    string partidosJson = JsonConvert.SerializeObject(partidos.ToArray(), Formatting.Indented);
-
-        //    File.WriteAllText("partidos.Json", partidosJson);
-        //}
     }
 }

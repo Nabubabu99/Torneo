@@ -5,13 +5,13 @@ using System.IO;
 
 namespace Torneo
 {
-    class Partido : Torneo
+    class Partido
     {
-        private Equipo equipoLocal;
-        private Equipo equipoVisitante;
+        public Equipo equipoLocal;
+        public Equipo equipoVisitante;
         private int golesEquipoLocal;
         private int golesEquipoVisitante;
-        public List<Partido> partidosCreados;
+        //private Torneo torneo = new Torneo();
 
         public Partido()
         {
@@ -24,17 +24,17 @@ namespace Torneo
             this.equipoVisitante = equipoVisitante;
         }
 
-        public Partido(string equipo1, string equipo2)
-        {
-            Equipo equipoLocal = new Equipo(equipo1);
-            this.equipoLocal = equipoLocal;
+        //public Partido(string equipo1, string equipo2)
+        //{
+        //    Equipo equipoLocal = new Equipo(equipo1);
+        //    this.equipoLocal = equipoLocal;
 
-            Equipo equipoVisitante = new Equipo(equipo2);
-            this.equipoVisitante = equipoVisitante;
+        //    Equipo equipoVisitante = new Equipo(equipo2);
+        //    this.equipoVisitante = equipoVisitante;
 
-            listaEquipos.Add(equipoLocal);
-            listaEquipos.Add(equipoVisitante);
-        }
+        //    torneo.listaEquipos.Add(equipoLocal);
+        //    torneo.listaEquipos.Add(equipoVisitante);
+        //}
         public string getNombrEquipoLocal()
         {
             return equipoLocal.Nombre();
@@ -78,18 +78,18 @@ namespace Torneo
         }
         //public void GuardarPartido()
         //{
-        //    TextWriter archivoPartidos = File.AppendText("partidos.txt");
-        //    TextWriter archivoEquipoVisitante = File.AppendText("equipoVisitante.txt");
-        //    TextWriter archivoGoles = File.AppendText("goles.txt");
+            //TextWriter archivoPartidos = File.AppendText("partidos.txt");
+            //    TextWriter archivoEquipoVisitante = File.AppendText("equipoVisitante.txt");
+            //    TextWriter archivoGoles = File.AppendText("goles.txt");
 
         //    archivoPartidos.WriteLine($"{equipoLocal.Nombre()}");
         //    archivoPartidos.WriteLine($"{equipoVisitante.Nombre()}");
         //    archivoGoles.WriteLine($"{golesEquipoLocal}");
         //    archivoGoles.WriteLine($"{golesEquipoVisitante}");
 
-        //    archivoPartidos.Close();
-        //    archivoEquipoVisitante.Close();
-        //    archivoGoles.Close();
+            //    archivoPartidos.Close();
+            //    archivoEquipoVisitante.Close();
+            //    archivoGoles.Close();
         //}
     }
 }
