@@ -57,6 +57,10 @@ namespace TournamentManager.Model
                 {
                     Console.Write("Ingrese el nombre del equipo a agregar: ");
                     nuevoEquipoNombre = Console.ReadLine();
+                    if(string.IsNullOrEmpty(nuevoEquipoNombre) || Teams.Any(t => string.Compare(t.Name, nuevoEquipoNombre, true) == 0))
+                    {
+                        Console.WriteLine("Este equipo ya fue registrado");
+                    }
                 } while (string.IsNullOrEmpty(nuevoEquipoNombre) || Teams.Any(t => string.Compare(t.Name, nuevoEquipoNombre, true) == 0));
                 Teams.Add(new Team { Id = Teams.Count() + 1, Name = nuevoEquipoNombre });
             }
